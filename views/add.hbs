@@ -1,0 +1,33 @@
+<h1>Add characters</h1>
+<form class="" method="POST" action="/add">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" {{#if inputs.name}}value="{{inputs.name}}"{{/if}} >
+    </div>
+    <div class="form-group">
+        <label for="birth_year">Birth year</label>
+        <input type="text" name="birth_year" {{#if inputs.birth_year}}value="{{inputs.birth_year}}"{{/if}} >
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select name="gender">
+            <option> - </option>
+            <option value="male" {{#if inputs.male}}selected="selected"{{/if}} >Male</option>
+            <option value="female" {{#if inputs.female}}selected="selected"{{/if}} >Female</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="name">Height</label>
+        <input type="text" name="height" {{#if inputs.height}}value="{{inputs.height}}"{{/if}} >
+    </div>
+    <div class="form-group">
+        <label for="name">Mass</label>
+        <input type="text" name="mass" {{#if inputs.mass}}value="{{inputs.mass}}"{{/if}} >
+    </div>
+    {{#if inputs.key}}
+        <input type="hidden" name="key" value="{{inputs.key}}">
+        <input type="submit" class="btn btn-primary" value="Edit">
+    {{else}}
+        <input type="submit" class="btn btn-primary" value="Add">
+    {{/if}}
+</form>
